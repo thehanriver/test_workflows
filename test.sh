@@ -31,7 +31,7 @@ chrispl-search --for id,status,plugin_name          \
                     "password":     "chris1234"}'
 
 schrispl-search --for fname                              \
-               --using plugin_inst_id=47                 \
+               --using plugin_inst_id=231                 \
                --across files                           \
                --onCUBEaddress localhost                \
                --onCUBEport 8000

@@ -1,0 +1,259 @@
+{
+    "status": false,
+    "query": {
+        "status": true,
+        "search": {
+            "status": true,
+            "templatize": {
+                "status": true,
+                "message": "1 parameters templatized",
+                "CLI": {
+                    "str_CUBE": "{\"protocol\":\"http\",\"port\":\"8000\",\"address\":\"localhost\",\"user\":\"chris\",\"password\":\"chris1234\"}",
+                    "str_CUBEaddress": "",
+                    "str_CUBEport": "",
+                    "b_version": false,
+                    "b_man": false,
+                    "b_syslog": false,
+                    "b_json": true,
+                    "str_pluginSpec": "name=pl-tpdf",
+                    "str_args": "ARGS;--imagefile=sample.png;--patientId=96-12345;--title=report;--previous_id=99 --dir=chris/feed_1/pl-lungct_1/pl-med2img_4/data/output.meta.json",
+                    "str_across": "plugins",
+                    "str_filterFor": "",
+                    "verbosity": 1,
+                    "str_using": "name=pl-tpdf",
+                    "str_for": "id",
+                    "str_configFileLoad": "",
+                    "str_configFileSave": "",
+                    "str_debugToDir": "/tmp"
+                },
+                "params": {
+                    "name": "pl-tpdf"
+                }
+            },
+            "response": {
+                "collection": {
+                    "version": "1.0",
+                    "href": "http://localhost:8000/api/v1/plugins/search/?limit=50000&name=pl-tpdf",
+                    "items": [
+                        {
+                            "data": [
+                                {
+                                    "name": "id",
+                                    "value": 11
+                                },
+                                {
+                                    "name": "creation_date",
+                                    "value": "2021-04-12T12:37:00.967974-04:00"
+                                },
+                                {
+                                    "name": "name",
+                                    "value": "pl-tpdf"
+                                },
+                                {
+                                    "name": "version",
+                                    "value": "0.0.1"
+                                },
+                                {
+                                    "name": "dock_image",
+                                    "value": "thehanriver/pl-tpdf"
+                                },
+                                {
+                                    "name": "public_repo",
+                                    "value": "https://github.com/FNNDSC"
+                                },
+                                {
+                                    "name": "icon",
+                                    "value": ""
+                                },
+                                {
+                                    "name": "type",
+                                    "value": "ds"
+                                },
+                                {
+                                    "name": "stars",
+                                    "value": 0
+                                },
+                                {
+                                    "name": "authors",
+                                    "value": "mario <hanmario@bu.edu>"
+                                },
+                                {
+                                    "name": "title",
+                                    "value": "PDF generation plugin"
+                                },
+                                {
+                                    "name": "category",
+                                    "value": ""
+                                },
+                                {
+                                    "name": "description",
+                                    "value": "An app to ..."
+                                },
+                                {
+                                    "name": "documentation",
+                                    "value": "http://wiki"
+                                },
+                                {
+                                    "name": "license",
+                                    "value": "MIT"
+                                },
+                                {
+                                    "name": "execshell",
+                                    "value": "/usr/local/bin/python"
+                                },
+                                {
+                                    "name": "selfpath",
+                                    "value": "/usr/local/bin"
+                                },
+                                {
+                                    "name": "selfexec",
+                                    "value": "tpdf"
+                                },
+                                {
+                                    "name": "min_number_of_workers",
+                                    "value": 1
+                                },
+                                {
+                                    "name": "max_number_of_workers",
+                                    "value": 1
+                                },
+                                {
+                                    "name": "min_cpu_limit",
+                                    "value": 1000
+                                },
+                                {
+                                    "name": "max_cpu_limit",
+                                    "value": 2147483647
+                                },
+                                {
+                                    "name": "min_memory_limit",
+                                    "value": 200
+                                },
+                                {
+                                    "name": "max_memory_limit",
+                                    "value": 2147483647
+                                },
+                                {
+                                    "name": "min_gpu_limit",
+                                    "value": 0
+                                },
+                                {
+                                    "name": "max_gpu_limit",
+                                    "value": 0
+                                }
+                            ],
+                            "href": "http://localhost:8000/api/v1/plugins/11/",
+                            "links": [
+                                {
+                                    "rel": "meta",
+                                    "href": "http://localhost:8000/api/v1/plugins/metas/11/"
+                                },
+                                {
+                                    "rel": "parameters",
+                                    "href": "http://localhost:8000/api/v1/plugins/11/parameters/"
+                                },
+                                {
+                                    "rel": "instances",
+                                    "href": "http://localhost:8000/api/v1/plugins/11/instances/"
+                                },
+                                {
+                                    "rel": "compute_resources",
+                                    "href": "http://localhost:8000/api/v1/plugins/11/computeresources/"
+                                }
+                            ]
+                        }
+                    ],
+                    "links": [],
+                    "total": 1
+                }
+            },
+            "message": "CUBE call returned a response"
+        },
+        "target": [
+            [
+                {
+                    "name": "id",
+                    "value": 11
+                }
+            ]
+        ],
+        "message": "1 target(s) found",
+        "keys": [
+            "id",
+            "creation_date",
+            "name",
+            "version",
+            "dock_image",
+            "public_repo",
+            "icon",
+            "type",
+            "stars",
+            "authors",
+            "title",
+            "category",
+            "description",
+            "documentation",
+            "license",
+            "execshell",
+            "selfpath",
+            "selfexec",
+            "min_number_of_workers",
+            "max_number_of_workers",
+            "min_cpu_limit",
+            "max_cpu_limit",
+            "min_memory_limit",
+            "max_memory_limit",
+            "min_gpu_limit",
+            "max_gpu_limit"
+        ]
+    },
+    "run": {
+        "status": false,
+        "run": {
+            "status": true,
+            "templatize": {
+                "status": true,
+                "message": "3 key(s) parsed into template",
+                "template": {
+                    "data": [
+                        {
+                            "name": "imagefile",
+                            "value": "sample.png"
+                        },
+                        {
+                            "name": "patientId",
+                            "value": "96-12345"
+                        },
+                        {
+                            "name": "title",
+                            "value": "report"
+                        }
+                    ]
+                },
+                "argsParse": {
+                    "status": true,
+                    "message": "5 args parsed",
+                    "CLIdict": {
+                        "ARGS": true,
+                        "imagefile": "sample.png",
+                        "patientId": "96-12345",
+                        "title": "report"
+                    }
+                }
+            },
+            "response": {
+                "collection": {
+                    "version": "1.0",
+                    "href": "http://localhost:8000/api/v1/plugins/11/instances/",
+                    "error": {
+                        "message": "{\"previous_id\": [\"This field is required.\"]}"
+                    }
+                }
+            },
+            "message": "CUBE call return a response"
+        },
+        "target": [],
+        "message": "{\"previous_id\": [\"This field is required.\"]}"
+    },
+    "message": "plugin run NOT scheduled -- some error returned"
+}
