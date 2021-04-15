@@ -44,7 +44,7 @@ declare -a a_WORKFLOWSPEC=(
                                 --imagefile=sample.png;
                                 --patientId=@patientID;
                                 --title=report;
-                                --previous_id=@prev_id
+                                --previous_id=@prev_id;
                                 --dir=@dir"
 )
 
@@ -520,8 +520,7 @@ title -d 1 "Building and Scheduling workflow..."
 
 
 	combined="${combined}${combined:+,}$ID2"
-	 # DISREGARD
-	 # combined="${combined}${combined:+,}$ID3"
+	
         if (( b_waitOnBranchFinish )) ; then
             waitForNodeState    "$CUBE" "finishedSuccessfully" $ID3 retState
         fi
@@ -600,30 +599,35 @@ title -d 1 "Ranking patients"
                  "a_WORKFLOWSPEC[@]"
                  
 
-windowBottom
 
     RANKID=$ID4   
     filesInRank=""
     regFiles=""
     retState1=""
-     
+    waitForNodeState    "$CUBE" "finishedSuccessfully" $RANKID retState1
     dataInNode_get      fname "$CUBE"  $RANKID filesInRank
 
     regFiles=$( echo "$filesInRank"         |\
-                awk '{print $3}'            |\
-                awk -F \/ '{print $5}'      )
-                
+                awk -F \/ '{print $9}'      )
+              
     read -a a_Rank <<< $(echo $regFiles)
-    
- for rank in "${a_Rank[@]}" ; do
+    unset a_Rank[0]
+    unset a_Rank[-1]
+
+    read -a a_Dir <<< $(echo "${a_Rank[@]}" | tr ' ' '\n' | sort -u | tr '\n' ' ')
+
+ for rank in "${a_Dir[@]}" ; do
+ 	
+ 	
         plugin_run  ":5" "a_WORKFLOWSPEC[@]" "$CUBE" ID5 $sleepAfterPluginRun \
                     "@prev_id=$ID4;@patientID=$ID1-12345;@dir=$rank" && id_check $ID5
         digraph_add "GRAPHVIZBODY" "GRAPHVIZBODYARGS" ":4;$ID4" ":5;$ID5" \
                     "a_WORKFLOWSPEC[@]"
+        echo "$rank"
  done 
  
-	echo -en "\033[2A\033[2K"
-	postRun_report
+	#echo -en "\033[2A\033[2K"
+	#postRun_report
 	
 if (( b_respFail > 0 )) ; then exit 3 ; fi
 
